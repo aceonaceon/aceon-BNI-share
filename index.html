@@ -66,7 +66,7 @@
 </head>
 <body>
     <div class="container">
-        <h1>歡迎來到我的分享頁面</h1>
+        <h1>歡迎來到學無界遊學遊學Jason(BNI大敬業分會)的分享頁面</h1>
         
         <button class="button facebook" onclick="shareFacebook()">分享到Facebook</button>
         <p>點擊以上按鈕將學無界暑期海外夏令營的網頁分享到您的Facebook動態</p>
@@ -92,10 +92,13 @@
         };
 
         function shareFacebook() {
+            var defaultText = encodeURIComponent("分享一下BNI夥伴的學無界留學遊學中心的海外夏令營網頁。");
+            var hashtags = encodeURIComponent("#學無界留學遊學 #暑期夏令營 #");
             FB.ui({
                 method: 'share',
                 href: 'https://www.studywb.com/products/summer-course',
-                quote: '分享一下BNI夥伴的學無界留學遊學中心的海外夏令營網頁。顧問Jason有18年海外教育產品顧問的經驗，擅長透過深入對話，精準分析家長的需求，建議最適合的留學遊學產品。讓出國不再走彎路歪來歪去，把出國的開銷效益最大化。有需要的朋友我可以幫你們介紹認識一下，透過我預約可以免費諮詢2小時喔！',
+                quote: '學無界顧問Jason有18年海外教育產品顧問的經驗，擅長透過深入對話，精準分析家長的需求，建議最適合的留學遊學產品。讓出國不再走彎路歪來歪去，把出國的開銷效益最大化。有需要的朋友我可以幫你們介紹認識一下，透過我預約可以免費諮詢2小時喔！',
+                hashtag: defaultText
             }, function(response){});
         }
     </script>
