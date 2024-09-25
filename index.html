@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>社交分享和連結</title>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 90%;
+        }
+        h1 {
+            color: #4a4a4a;
+            margin-bottom: 30px;
+            font-size: 24px;
+            text-align: center;
+        }
+        .button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 50px;
+            margin: 20px 0;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+        .button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1), 0 3px 6px rgba(0, 0, 0, 0.08);
+        }
+        .facebook { background-color: #3b5998; }
+        .line { background-color: #00c300; }
+        .google { background-color: #db4437; }
+        .bni { background-color: #0077b5; }
+        p {
+            margin: 10px 0;
+            color: #666;
+            font-size: 14px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>歡迎來到我的分享頁面</h1>
+        
+        <button class="button facebook" onclick="shareFacebook()">分享到Facebook</button>
+        <p>點擊以上按鈕將學無界暑期海外夏令營的網頁分享到您的Facebook動態</p>
+        
+        <a href="https://line.me/ti/g2/4TZ1L5xZg17xbkFJXT_-h_N1sYTC41M8YGIcrA?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" class="button line">加入Line社群</a>
+        <p>我們是一群關心我們自己下一代，以及希望盡一份社會責任的企業家。希望透過這個社群分享我們如何讓下一代可以更好的資訊與資源。</p>
+        <p>點擊以上按鈕加入我們的Line社群</p>
+        
+        <a href="https://www.google.com/search?q=%E5%AD%B8%E7%84%A1%E7%95%8C&oq=%E5%AD%B8%E7%84%A1%E7%95%8C&gs_lcrp=EgZjaHJvbWUqCQgAEEUYOxiABDIJCAAQRRg7GIAEMgYIARBFGDsyBwgCEAAYgAQyCggDEAAYgAQYogQyCggEEAAYgAQYogQyBggFEEUYPTIGCAYQRRg9MgYIBxBFGD3SAQkxMTUxMWowajGoAgiwAgE&sourceid=chrome&ie=UTF-8#" class="button google">在Google上評論</a>
+        <p>點擊以上按鈕為學無界留學遊學的Google商家留下評論</p>
+        
+        <a href="http://bni.com.tw/zh-TW/memberdetails?encryptedMemberId=SD3OT2XXBHTBsZ3D5nA1XQ%3D%3D&name=%E9%BB%83+Huang+%E5%AD%90%E8%BB%92+Jason" class="button bni">查看我的BNI檔案</a>
+        <p>點擊以上按鈕查看BNI大敬業分會留學遊學代表黃子軒的BNI個人檔案</p>
+    </div>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : '559761201284463',
+                xfbml      : true,
+                version    : 'v12.0'
+            });
+        };
+
+        function shareFacebook() {
+            FB.ui({
+                method: 'share',
+                href: 'https://www.studywb.com/products/summer-course',
+                quote: '預設分享文字內容',
+            }, function(response){});
+        }
+    </script>
+</body>
+</html>
